@@ -61,7 +61,7 @@
 
         /* ---- MAP ---- */
         .viewport {
-            max-width: 900px; width: 100%; overflow: hidden;
+            max-width: 900px; width: 100%; overflow: hidden; position: relative;
             border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
         .map-container {
@@ -186,6 +186,26 @@
         .result-btns button.secondary:hover { background: #7f8c8d; }
 
         .hidden { display: none !important; }
+
+        /* ---- MOBILE ---- */
+        @media (max-width: 640px) {
+            body { padding: 10px; }
+            .viewport { position: relative; touch-action: manipulation; }
+            .map-container {
+                transform: scale(2.2);
+                transform-origin: 57% 14%;
+            }
+            .label { font-size: 7px; padding: 2px 6px; border-radius: 4px; }
+            .label::after { border-width: 4px; }
+            .label.below { transform: translate(-50%, 12px); }
+            .question { font-size: 1.1rem; margin-bottom: 8px; }
+            .choices { gap: 8px; margin-top: 10px; }
+            .choice-btn { padding: 12px 16px; font-size: 0.9rem; flex: 1 1 40%; }
+            .type-input { width: 180px; }
+            .province-btn { padding: 14px; font-size: 1rem; }
+            .result-btns { flex-direction: column; }
+            .result-btns button { width: 100%; }
+        }
     </style>
 </head>
 <body>
