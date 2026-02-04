@@ -472,11 +472,11 @@ function checkChoice(chosen, correct, btn) {
 function submitTyped() {
     if (waiting) return;
     const inp = document.getElementById('typeInput');
-    const typed = inp.value.trim().toLowerCase();
+    const typed = inp.value.trim();
     if (!typed) return;
     waiting = true;
     const correct = questions[currentQ];
-    const name = locations[correct].name.toLowerCase();
+    const name = locations[correct].name;
     if (typed === name) {
         score++;
         inp.classList.add('correct');
